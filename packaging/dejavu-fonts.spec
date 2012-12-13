@@ -32,13 +32,13 @@ install -m 0644 ttf/*.ttf %{buildroot}%{_ttfontsdir}/
 
 
 %post
-if [ -x %{_bindir}/fc-cache ]; then \
-    %{_bindir}/fc-cache %{_ttffontsdir} || : \
+if [ -x %{_bindir}/fc-cache ]; then 
+    %{_bindir}/fc-cache %{_ttffontsdir} || : 
 fi
 
 %postun
-if [ -x %{_bindir}/fc-cache ]; then \
-    %{_bindir}/fc-cache %{_ttffontsdir} || : \
+if [ -x %{_bindir}/fc-cache ]; then 
+    %{_bindir}/fc-cache %{_ttffontsdir} || : 
 fi
 
 %files
