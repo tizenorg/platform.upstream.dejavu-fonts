@@ -1,5 +1,5 @@
 %define _fontsdir               %{_datadir}/fonts
-%define _ttfontsdir             %{_fontsdir}/truetype
+%define _ttffontsdir            %{_fontsdir}/truetype
 %define _miscfontsdir           %{_fontsdir}/misc
 %define _fontsconfdir           %{_sysconfdir}/fonts
 %define _fontsconfddir          %{_fontsconfdir}/conf.d
@@ -27,22 +27,22 @@ of collaborative development (see authors), under a Free license.
 %build
 
 %install
-mkdir -p %{buildroot}%{_ttfontsdir}/
-install -m 0644 ttf/*.ttf %{buildroot}%{_ttfontsdir}/
+mkdir -p %{buildroot}%{_ttffontsdir}/
+install -m 0644 ttf/*.ttf %{buildroot}%{_ttffontsdir}/
 
 
 %post
 if [ -x %{_bindir}/fc-cache ]; then 
-    %{_bindir}/fc-cache %{_ttffontsdir} || : 
+    %{_bindir}/fc-cache %{_ttffontsdir} || :
 fi
 
 %postun
 if [ -x %{_bindir}/fc-cache ]; then 
-    %{_bindir}/fc-cache %{_ttffontsdir} || : 
+    %{_bindir}/fc-cache %{_ttffontsdir} || :
 fi
 
 %files
 %defattr(-,root,root,755)
 %license LICENSE
-%{_ttfontsdir}/
+%{_ttffontsdir}/
 
