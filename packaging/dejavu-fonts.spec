@@ -13,6 +13,7 @@ Summary:        DejaVu Truetype Fonts
 Url:            http://dejavu.sourceforge.net/
 Group:          System/Fonts
 Source:         dejavu-fonts-ttf-%{version}.tar.bz2
+Source1001: 	dejavu-fonts.manifest
 BuildArch:      noarch
 
 %description
@@ -23,6 +24,7 @@ of collaborative development (see authors), under a Free license.
 
 %prep
 %setup -n %{name}-ttf-%{version}
+cp %{SOURCE1001} .
 
 %build
 
@@ -42,6 +44,7 @@ if [ -x %{_bindir}/fc-cache ]; then
 fi
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,755)
 %license LICENSE
 %{_ttffontsdir}/
