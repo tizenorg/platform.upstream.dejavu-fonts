@@ -8,10 +8,10 @@
 Name:           dejavu-fonts
 Version:        2.33
 Release:        0
-License:        Permissive
+License:        Bitstream Vera and Public Domain
 Summary:        DejaVu Truetype Fonts
 Url:            http://dejavu.sourceforge.net/
-Group:          System/Fonts
+Group:          Graphics & UI Framework/Fonts
 Source:         dejavu-fonts-ttf-%{version}.tar.bz2
 Source1001: 	dejavu-fonts.manifest
 BuildArch:      noarch
@@ -34,12 +34,12 @@ install -m 0644 ttf/*.ttf %{buildroot}%{_ttffontsdir}/
 
 
 %post
-if [ -x %{_bindir}/fc-cache ]; then 
+if [ -x %{_bindir}/fc-cache ]; then
     %{_bindir}/fc-cache %{_ttffontsdir} || :
 fi
 
 %postun
-if [ -x %{_bindir}/fc-cache ]; then 
+if [ -x %{_bindir}/fc-cache ]; then
     %{_bindir}/fc-cache %{_ttffontsdir} || :
 fi
 
